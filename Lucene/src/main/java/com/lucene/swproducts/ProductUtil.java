@@ -11,7 +11,8 @@ import java.util.Set;
 import org.apache.commons.io.FileUtils;
      
 public class ProductUtil {
-     
+
+    private static final String fName = "D:\\WorkSpace\\gitee\\search-engine\\Lucene\\src\\main\\resources\\140k_products.txt";
     public static void main(String[] args) throws IOException, InterruptedException, AWTException {
  
         String fileName = "D:\\WorkSpace\\gitee\\search-engine\\Lucene\\src\\main\\resources\\140k_products.txt";
@@ -21,6 +22,9 @@ public class ProductUtil {
     }
  
     public static List<Product> file2list(String fileName) throws IOException {
+        if(fileName.equals("")){
+            fileName = fName;
+        }
         File f = new File(fileName);
         List<String> lines = FileUtils.readLines(f,"UTF-8");
         List<Product> products = new ArrayList<>();
