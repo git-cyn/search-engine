@@ -9,7 +9,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 
 @Document(indexName = "item",type = "docs", shards = 1, replicas = 0)
-public class ItemT implements Serializable {
+public class Item implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
@@ -35,10 +35,10 @@ public class ItemT implements Serializable {
     @Field(index = false, type = FieldType.Keyword)
     private String images; // 图片地址
 
-    public ItemT() {
+    public Item() {
     }
 
-    public ItemT(Long id, String title, String category, String brand, Double price, String images) {
+    public Item(Long id, String title, String category, String brand, Double price, String images) {
         this.id = id;
         this.title = title;
         this.category = category;
